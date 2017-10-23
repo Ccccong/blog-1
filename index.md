@@ -3,10 +3,10 @@
  消息中间件
 
 ---
-##1.1 JMS简介
+## 1.1 JMS简介
 >JMS（Java Messaging Service） 是 Java 平台上有关面向消息中间件的技术规范， 它便于消息系统中的Java应用程序进行消息交换,并且通过提供标准的产生、发送、 接收消息的接口简化企业应用的开发。
         
-##1.2 ActiveMQ简介
+## 1.2 ActiveMQ简介
 >ActiveMQ 是 Apache 出品， 最流行的， 能力强劲的开源消息总线。 ActiveMQ 是一个完全支持 JMS1.1 和 J2EE 1.4 规范的 JMS Provider 实现， 尽管 JMS 规范出台已经是很久的事情了，但是JMS在当今的J2EE应用中间仍然扮演着特殊的地位。
 
 对消息的传递有两种类型：
@@ -43,9 +43,9 @@ chmod 755 activemq
 ActiveMQ的默认管理端口：8161，通信端口：61616
 
 ---
-##ActiveMQ示例
+## ActiveMQ示例
 
-####点对点模式
+#### 点对点模式
 (1) 创建activemqDemo,引入依赖
 
 ```<dependency>
@@ -117,7 +117,7 @@ session.close();
 connection.close();
 ```
 
-####发布/订阅模式
+#### 发布/订阅模式
 
 (1)创建消息生产者
 
