@@ -4,13 +4,13 @@
 
 ---
 
-##MyCat简介
+## MyCat简介
 >&emsp;&emsp;Mycat 背后是阿里曾经开源的知名产品——Cobar。 Cobar的核心功能和优势是MySQL数据库分片。
 &emsp;&emsp;Mycat 是基于 cobar 演变而来， 对 cobar 的代码进行了彻底的重构， 使用 NIO 重构了网络模块，并且优化了Buffer 内核， 增强了聚合，oin等基本特性， 同时兼容绝大多数数据库成为通用的数据库中间件。简单的说， MyCAT 就是： 一个新颖的数据库中间件产品支持 mysql 集群，或者mariadbcluster， 提供高可用性数据分片集群。你可以像使用 mysql 一样使用 mycat。 对于开
 发人员来说根本感觉不到mycat的存在。
 
 ---
-##环境需求
+## 环境需求
 - JDK :  1.7及以上版本
 - MySQL: mysql5.5以上版本
 
@@ -74,13 +74,14 @@ schema.xml配置如下：
 <schema name="PINYOUGOUDB" checkSQLschema="false" sqlMaxLimit="100">
 <table name="tb_test" dataNode="dn1,dn2,dn3" rule="auto-sharding-long" />
 </schema>
-<dataNode name="dn1" dataHost="localhost1" database="db1" />
-<dataNode name="dn2" dataHost="localhost1" database="db2" />
-<dataNode name="dn3" dataHost="localhost1" database="db3" />
-<dataHost name="localhost1" maxCon="1000" minCon="10" balance="0"
-writeType="0" dbType="mysql" dbDriver="native" switchType="1"
-slaveThreshold="100">
+    <dataNode name="dn1" dataHost="localhost1" database="db1" />
+    <dataNode name="dn2" dataHost="localhost1" database="db2" />
+    <dataNode name="dn3" dataHost="localhost1" database="db3" />
+    <dataHost name="localhost1" maxCon="1000" minCon="10" balance="0"
+    writeType="0" dbType="mysql" dbDriver="native" switchType="1"
+    slaveThreshold="100">
 <heartbeat>select user()</heartbeat>
+
 <writeHost host="hostM1" url="localhost:3306" user="root"
 password="123456">
 </writeHost>
@@ -117,7 +118,7 @@ title VARCHAR(100) NOT NULL ,
 PRIMARY KEY (id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8
 ```
-在创建完成后，会对表`td_test`的结构惊醒初始化。查看物理数据库`db1,db2,db3`,会发现，每个物理数据库中都已经创建好了表`tb_test`。
+在创建完成后，会对表`td_test`的结构进行初始化。查看物理数据库`db1,db2,db3`,会发现，每个物理数据库中都已经创建好了表`tb_test`。
 
 然后就可以向逻辑库中的逻辑表中插入数据，数据会按照分片规则进行分片存储。
 
@@ -140,17 +141,17 @@ rule.xml用于定义分片规则
 - column：用于定义分片的列
 - algorithm：代表算法的名称
 
-rang-long的定义：
+**rang-long**的定义：
 
-```java
+```shell
     <function name="rang-long"
         class="org.opencloudb.route.function.AutoPartitionByLong">
         <property name="mapFile">autopartition-long.txt</property>
     </function>
     
 ```
- autopartition-long.txt的定义
-```java
+ **autopartition-long.txt**的定义
+```shell
     # range start-end ,data node index
     # K=1000,M=10000.
     0-500M=0
@@ -160,9 +161,9 @@ rang-long的定义：
 
 ----------
 
- 2.一致性哈希murmur
+ 2. 一致性哈希murmur
  当我们需要将数据平均分在几个分区中，需要使用一致性hash规则
-```java
+```shell
 <function name="murmur"
      class="org.opencloudb.route.function.PartitionByMurmurHash">
     <property name="seed">0</property><!--     默认是 0 -->
