@@ -1,6 +1,7 @@
-# wangfanming.GitHub.io
+# wangfanming.github.io
+
 王范明的博客
----
+------
 
 #### 目录
 
