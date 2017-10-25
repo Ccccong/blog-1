@@ -9,7 +9,7 @@
 
 - [Maven中的依赖传递](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/Maven中的依赖传递.md)
 
-- [关于Java WEB项目中中文乱码的解决方法](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/关于Java WEB项目中中文乱码的解决方法.md)
+- [关于JavaWEB项目中中文乱码的解决方法](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/关于JavaWEB项目中中文乱码的解决方法.md)
 
 - [搜索引擎的核心基础技术](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/搜索引擎的核心基础技术.md)
 

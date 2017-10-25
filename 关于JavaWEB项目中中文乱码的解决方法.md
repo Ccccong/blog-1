@@ -1,7 +1,7 @@
 ﻿# 关于Java WEB项目中中文乱码的解决方法
 
 ------
-##例子
+## 例子
 如下表单：
 ```shell
 <form action="${pageContext.request.contextPath}/UserServlet" method="post">
@@ -15,7 +15,7 @@
     name = request.getParameter("name");
 ```
 此时获取到的name的值一定是乱码，此时就要进行中文乱码处理了。
-##处理方案可根据请求的类型分为两类:
+## 处理方案可根据请求的类型分为两类:
 **POST请求**：
 ```shell
 request.setCharacterEncoding("UTF-8");//在接收请求参数之前，将request的缓冲区字符集设置为UTF-8
@@ -36,8 +36,8 @@ String name = new String(param.getBytes("ISO-8859-1"),"UTF-8");//将获取到的
 
 ***以上是针对单个网页的中文乱码解决方法***
 
-#在一个web项目中，中文乱码的解决方案
-####我认为最佳解决方案就是使用过滤器，拦截所有包含有中文的请求数据，转码后再传递给请求的目标地址。
+### 在一个web项目中，中文乱码的解决方案
+#### 我认为最佳解决方案就是使用过滤器，拦截所有包含有中文的请求数据，转码后再传递给请求的目标地址。
 
 依旧以上述表单数据的中文乱码为例：
 Filter代码如下：

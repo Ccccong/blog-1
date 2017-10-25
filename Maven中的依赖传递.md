@@ -4,7 +4,7 @@
 
 ---
 
-##一、依赖范围scope
+## 一、依赖范围scope
 >Maven因为执行一系列编译、测试、和部署等操作，在不同的操作下使用的classpath不同，**依赖范围就是控制依赖与三种classpath(编译classpath、测试classpath、运行classpath)的关系**。
 
 一共有5种，compile(编译)、test(测试)、runtime(运行时)、provided、system不指定，则范围默认为compile。
@@ -16,7 +16,7 @@
  - system：系统依赖范围。本地依赖，不在maven中央仓库。
  
 --- 
-##二、依赖的传递
+## 二、依赖的传递
 A->B(compile)   a依赖b      
     >b是A的编译依赖范围，在A编译、测试、运行时都依赖b
 
@@ -36,7 +36,7 @@ B->C(compile)   B依赖C
 
 由上表不难看出，项目A具体会不会导入B依赖的包c，取决于第一和第二依赖，但是依赖的范围不会超过第一直接依赖，即具体会不会引入c包，要看第一直接依赖的依赖范围。
 
-##三、以来冲突的调节   
+## 三、以来冲突的调节   
 
     A -> B -> C -> X(1.0)
     A -> D -> X(2.0)
@@ -81,7 +81,7 @@ B->C(compile)   B依赖C
 
  
 
-##五、依赖关系的查看
+## 五、依赖关系的查看
 
 cmd进入工程根目录，执行  mvn dependency:tree
 
