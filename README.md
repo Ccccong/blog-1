@@ -1,7 +1,4 @@
-# wangfanming.github.io
-王范明的博客
-******
-#### 目录
+## 目录
 ******
 
 - [ActiveMQ-消息中间件](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/activemq.md)
