@@ -5,5 +5,5 @@
 ##博客目录
 - [ActiveMQ-消息中间件](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/activemq.md)
 
-- [ActiveMQ-消息中间件](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/MyCat分片.md)
+- [MyCat分片](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/MyCat分片.md)
 
