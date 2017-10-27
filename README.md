@@ -11,6 +11,10 @@
 
 - [搜索引擎的核心基础技术](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/搜索引擎的核心基础技术.md)
 
-- [爬虫高级课程](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/爬虫高级课程.md)
+- [爬虫高级](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/爬虫高级课程.md)
 
 - [Nginx反向代理与负载均衡](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/Nginx反向代理与负载均衡.md)
+
+- [Keepalived入门](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/Keepalived入门.md)
+
+
