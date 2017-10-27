@@ -23,11 +23,14 @@ keepalived的核心，负责主进程的启动、维护以及全局配置文件�
 ，包括常见的各种检查。VRRP模块是来实现VRRP协议的。
 
 初始状态：
+>
 ![](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/image/keep1.bmp)
 
 主机状态：
+>
 ![](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/image/keep2.bmp)
 
 主机恢复：
+>
 ![](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/image/keep3.bmp)
 
