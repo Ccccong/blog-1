@@ -125,11 +125,74 @@ server {
 ```shell
 127.0.0.1 cart.pinyougou.com
 ```
+---
 
 ## Nginx反向代理与负载均衡
 
+> 反向代理(Reverse Proxy):是指以**代理服务器**来接受Internet上的连接请求，然后将请求转发给内部网络
+上的服务器，并将从服务器上得到的结果返回给Internet上的请求连接的客户端，此时代理服务器对外就表现
+为一个反向代理服务器。正向代理针对的是客户端，而反向代理针对的是服务器。
 
+### 配置反反向代理
+1、在Nginx主机修改Nginx配置文件
+```shell
+upstream tomcat-cart{
+    server 192.168.25.135:9102;
+}
 
+server {
+    listen 80;
+    server_name cart.pinyougou.com;
+
+    location / {
+        proxy_pass http://tomcat-cart;
+        index index.html index.htm;
+    }
+}
+```
+2、配置域名解析
+
+3、重启nginx,然后使用域名访问
+>`http://cart.pinyougou.com/cart/index.html`
+
+---
+
+# 负载均衡
+>&emsp;&emsp; 负载均衡(Load Balance),其意思就是分摊到多个操作单元上进行执行，例如
+Web服务器、FTP服务器、企业关键应用服务器和其他关键服务器等，从而共同完成工作任务。
+它建立在现有网络结构上，提供了一种**廉价有效透明的方法扩展网络设备**和**服务器带宽**、**增加吞吐量**
+**加强网络数据处理能力**、**加强网络数据处理能力**、**提高网络的灵活性和可用性**。
+
+## 负载均衡的配置(示例)
+1、部署两个tomcat服务，端口分别为9801和9802.
+
+2、部署网站首页
+```shell
+[root@localhost ~]# cp -r portal/* /usr/local/tomcat-cluster/tomcat-portal-1/webapps/ROOT
+[root@localhost ~]# cp -r portal/* /usr/local/tomcat-cluster/tomcat-portal-2/webapps/ROOT
+```
+3、配置负载均衡
+
+3.1、设置域名指向
+`192.168.25.135 www.pinyougou.com`
+
+3.2、修改Nginx配置文件：
+```shell
+upstream tomcat-portal{
+    #配置服务列表，轮询调度以实现负载均衡,**weight**设置服务被调用的权重
+    server 192.168.25.135:9801 weight=2;
+    server 192.168.25.135:9802;
+}
+
+server {
+    listen 80;
+    server_name www.pinyougou.com;
+    location / {
+        proxy_pass http://tomcat-portal;
+        index index.html;
+    }
+}
+```
 
 
 
