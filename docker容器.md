@@ -187,7 +187,8 @@ docker.io/ubunto:12.04 /bin/bash`， 表明从镜像 Ubuntu:12.04 启动一个�
 `docker rmi 镜像ID`
 
 - 删除所有镜像
->```shell
+>
+```shell
     docker rmi `docker image -q`
 ```
 
