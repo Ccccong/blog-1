@@ -1,6 +1,8 @@
 ## 目录
 ******
 
+- [Hadoop-2.7.2高可用集群搭建](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/Hadoop-2.7.2高可用集群搭建.md)
+
 - [Docker容器技术](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/docker容器.md)
 
 - [ActiveMQ-消息中间件](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/activemq.md)
