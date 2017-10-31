@@ -1,5 +1,7 @@
 ## 目录
 ******
+- [Zookeeper归纳](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/Zookeeper相关知识点总结.md)
+
 - [网站流量日志数据自定义采集](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/网站流量日志数据自定义采集(埋点).md)
 
 - [Hadoop-2.7.2高可用集群搭建](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/Hadoop-2.7.2高可用集群搭建.md)
