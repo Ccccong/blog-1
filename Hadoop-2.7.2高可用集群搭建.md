@@ -257,7 +257,7 @@ Hadoop ， HA ,zookeeper
 
 8、启动集群
 
-**按顺序执行一下操作**
+**按顺序执行以下操作**
 
 在node-1上：
 ```shell
@@ -272,7 +272,7 @@ Hadoop ， HA ,zookeeper
 ```
 在node-2上(设置node-2为备份的namenode,所以需要在node-2上启动namenode进程)：
 ```shell
-   #hdfs namenode -bootstrapStandby
+   #hdfs namenode -bootstrapStandby(在第一次启动时执行)
    #hadoop-daemon.sh start namenode
 ```
 启动datanode(任意节点都可以):
