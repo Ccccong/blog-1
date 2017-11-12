@@ -14,7 +14,7 @@ Hadoop ， HA ,zookeeper
 | 主机名IP      | Namenode         | Datanode  | Yarn   | Zookeeper |JournalNode |
 | ------------|:--------------:|---------:|------:|---------:|----------:|
 | node-1:192.168.111.130 | 是      | 是        |否      | 是        |  是        |
-| node-2:192.168.111.129 | 是      | 是        |否      | 是        |  是        |
+| node-2:192.168.111.129 | 是      | 是        |是      | 是        |  是        |
 | node-3:192.168.111.128 | 否      | 是        |是      | 是        |  是        |
 
 1、安装JDK
@@ -211,14 +211,39 @@ Hadoop ， HA ,zookeeper
 
     ```shell
        <configuration>
-           <property>
-               <name>yarn.nodemanager.aux-services</name>
-               <value>mapreduce_shuffle</value>
-           </property>
-           <property>
-               <name>yarn.resourcemanager.hostname</name>
-               <value>node-3</value>
-           </property>
+       <!-- 开启RM高可用 -->
+       <property>
+       <name>yarn.resourcemanager.ha.enabled</name>
+       <value>true</value>
+       </property>
+       <!-- 指定RM的cluster id -->
+       <property>
+       <name>yarn.resourcemanager.cluster-id</name>
+       <value>yrc</value>
+       </property>
+       <!-- 指定RM的名字 -->
+       <property>
+       <name>yarn.resourcemanager.ha.rm-ids</name>
+       <value>rm1,rm2</value>
+       </property>
+       <!-- 分别指定RM的地址 -->
+       <property>
+       <name>yarn.resourcemanager.hostname.rm1</name>
+       <value>node-2</value>
+       </property>
+       <property>
+       <name>yarn.resourcemanager.hostname.rm2</name>
+       <value>node-3</value>
+       </property>
+       <!-- 指定zk集群地址 -->
+       <property>
+       <name>yarn.resourcemanager.zk-address</name>
+       <value>node-1:2181,node-2:2181,node-3:2181</value>
+       </property>
+       <property>
+       <name>yarn.nodemanager.aux-services</name>
+       <value>mapreduce_shuffle</value>
+       </property>
        </configuration>
     ```
 
@@ -288,18 +313,6 @@ Hadoop ， HA ,zookeeper
    #hadoop-daemons.sh start zkfc
 ```
 
-启动成功后使用`jsp`命令可以看到以下进程：
-node-1:
-
-![](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/image/node-1.bmp)
-
-node-2:
-
-![](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/image/node-2.bmp)
-
-node-3:
-
-![](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/image/node-3.bmp)
 
 
 然后就可以Web进行访问了
