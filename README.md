@@ -23,3 +23,5 @@
 - [搜索引擎的核心基础技术](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/搜索引擎的核心基础技术.md)
 
 - [爬虫高级](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/爬虫高级课程.md)
+
+- [Windows系统重装后，MySQL服务恢复手册](https://github.com/wangfanming/wangfanming.GitHub.io/blob/master/Windows系统重装后，MySQL服务恢复手册.md)
