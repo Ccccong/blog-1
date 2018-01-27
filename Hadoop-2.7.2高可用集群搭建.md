@@ -209,7 +209,8 @@ Hadoop ， HA ,zookeeper
    ```
    **修改yarn-site.xml**
 
-    ```shell
+```shell
+    
        <configuration>
        <!-- 开启RM高可用 -->
        <property>
@@ -245,7 +246,8 @@ Hadoop ， HA ,zookeeper
        <value>mapreduce_shuffle</value>
        </property>
        </configuration>
-    ```
+       
+```
 
 **修改slaves**
 
